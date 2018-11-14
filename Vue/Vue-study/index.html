@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue学习</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.js"></script>
+  <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
+  <!-- 1. 引用 axios -->
+  <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+  
+  <script>
+
+    new Vue({
+      el: document.getElementById('app'),
+      template: `
+        <div>
+          <button @click="sendAjax">发送请求</button>
+          <span>数据为：</span>
+          {{ getData }}
+        </div>
+      `,
+      data() {
+        return {
+          getData: ''
+        }
+      },
+      methods: {
+        sendAjax() {
+          // 直接使用 axios
+          // get 为请求方式
+          axios.get('https://www.easy-mock.com/mock/5be3885e033152564881d354/getInfo')
+          // then 为 promise 获取数据
+          .then((res) => {
+            this.getData = res.data;
+          })
+          // catch 为 promise 捕获异常
+          .catch();
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>

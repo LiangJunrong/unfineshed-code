@@ -14,7 +14,8 @@
 
 <script>
   import axios from 'axios';
-  import { toMoney } from '@/filter/moneyFilter.js'
+  import { toMoney } from '@/filter/moneyFilter.js';
+  import url from '@/serviceAPI.config.js';
   export default {
     filters: {
       moneyFilter(money) {
@@ -29,12 +30,21 @@
     },
     created() {
       axios({
-        url: 'https://www.easy-mock.com/mock/5bd2b50e6388c25a14965a22/index',
+        url: url.getGoodsInfo,
         method: 'get'
       }).then(res => {
-        // console.log(res.data.data);
+        console.log(res.data.data);
       }).catch(err => {
-        // console.log(err);
+        console.log(err);
+      });
+
+      axios({
+        url: url.getUserInfo,
+        method: 'get'
+      }).then(res => {
+        console.log(res.data.data);
+      }).catch(err => {
+        console.log(err);
       })
     }
   }
