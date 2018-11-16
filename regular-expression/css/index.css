@@ -1,7 +1,17 @@
+/* 共有样式 */
+.game {
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+}
+
+/* 开场 - index.html */
 .game-start {
-  width: 1000px;
+  /* display: none; */
+  width: 1000px;;
   height: 620px;
-  margin: 0 auto;
+  box-sizing: border-box;
+  margin: 20px auto;
   background: url("../img/background.png") no-repeat top center;
   position: relative;
 }
@@ -17,5 +27,10 @@
   opacity: .3;
 }
 .audio {
+  display: none;
+}
+
+/* 第一幕 - ActOne.html */
+.act-one {
   display: none;
 }
