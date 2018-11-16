@@ -1,0 +1,21 @@
+.game-start {
+  width: 1000px;
+  height: 620px;
+  margin: 0 auto;
+  background: url("../img/background.png") no-repeat top center;
+  position: relative;
+}
+.start-game {
+  display: inline-block;
+  width: 175px;
+  height: 50px;
+  border-radius: 15px;
+  position: absolute;
+  top: 425px;
+  left: 385px;
+  background: red;
+  opacity: .3;
+}
+.audio {
+  display: none;
+}
