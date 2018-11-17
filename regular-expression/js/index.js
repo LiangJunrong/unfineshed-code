@@ -23,7 +23,9 @@ $(function() {
    */
   $("#prelude-continue").click(function() {
     $(".prelude").fadeOut("slow", function() {
-      $(".act-one").fadeIn("slow");
+      $(".act-one").fadeIn("slow", function() {
+        $(".act-one-text").fadeIn("slow");
+      });
     })
   })
 
@@ -35,7 +37,22 @@ $(function() {
    * 第一章：报名
    */
 
-     // 验证姓名
+  // 第一幕：报名背景 -> 第一幕：报名表单
+  $("#act-one-text-continue").click(function() {
+    $(".act-one-text").fadeOut("slow", function() {
+      $(".act-one-form").fadeIn("slow");
+    })
+  })
+
+  // 判断字段是否有效
+  var userNameIsValid = false;
+  var userPasswordISValid = false;
+  var userPersonalProfileIsValid = false;
+  var userPhoneIsValid = false;
+  var userIdNumberIsValid = false;
+  var userMailBoxIsValid = false;
+
+  // 验证姓名
   $("#user-name").blur(function() {
     // 允许 中文，位数：2-*
     var useNamerReg = /^[\u4e00-\u9fa5]{2,9}$/;
@@ -45,6 +62,7 @@ $(function() {
       $(".user-name").addClass("is-valid");
       $(".user-name-valid-feedback").hide();
       $(".user-name-valid-feedback").removeClass("invalid-feedback");
+      userNameIsValid = true;
     } else {
       $(".user-name").addClass("is-invalid");
       $(".user-name-valid-feedback").show();
@@ -62,6 +80,7 @@ $(function() {
       $(".user-password").addClass("is-valid");
       $(".user-password-valid-feedback").hide();
       $(".user-password-valid-feedback").removeClass("invalid-feedback");
+      userPasswordISValid = true;
     } else {
       $(".user-password").addClass("is-invalid");
       $(".user-password-valid-feedback").show();
@@ -79,6 +98,7 @@ $(function() {
       $(".user-personal-profile").addClass("is-valid");
       $(".user-personal-profile-valid-feedback").hide();
       $(".user-personal-profile-valid-feedback").removeClass("invalid-feedback");
+      userPersonalProfileIsValid = true;
     } else {
       $(".user-personal-profile").addClass("is-invalid");
       $(".user-personal-profile-valid-feedback").show();
@@ -96,6 +116,7 @@ $(function() {
       $(".user-phone").addClass("is-valid");
       $(".user-phone-valid-feedback").hide();
       $(".user-phone-valid-feedback").removeClass("invalid-feedback");
+      userPhoneIsValid = true;
 
       // 判断是哪家手机号
       var isChinaMobile = /^134[0-8]\d{7}$|^(?:13[5-9]|147|15[0-27-9]|178|1703|1705|1706|18[2-478])\d{7,8}$/; // 移动
@@ -136,6 +157,7 @@ $(function() {
       $(".user-id-number").addClass("is-valid");
       $(".user-id-number-valid-feedback").hide();
       $(".user-id-number-valid-feedback").removeClass("invalid-feedback");
+      userIdNumberIsValid = true;
     } else {
       $(".user-id-number").addClass("is-invalid");
       $(".user-id-number-valid-feedback").show();
@@ -153,6 +175,7 @@ $(function() {
       $(".user-mailbox").addClass("is-valid");
       $(".user-mailbox-valid-feedback").hide();
       $(".user-mailbox-valid-feedback").removeClass("invalid-feedback");
+      userMailBoxIsValid = true;
     } else {
       $(".user-mailbox").addClass("is-invalid");
       $(".user-mailbox-valid-feedback").show();
@@ -209,8 +232,36 @@ $(function() {
   })
 
   // 确认报名
-  $("#form-submit-button").click(function() { 
-    
+  $("#form-submit-button").click(function() {
+    if(!userNameIsValid) {
+      $(".user-name").focus();
+    } else if(!userPasswordISValid) {
+      $(".user-password").focus();
+    } else if(!userPersonalProfileIsValid) {
+      $(".user-personal-profile").focus();
+    } else if(!userPhoneIsValid) {
+      $(".user-phone").focus();
+    } else if(!userIdNumberIsValid) {
+      $(".user-id-number").focus();
+    } else if(!userMailBoxIsValid) {
+      $(".user-mailbox").focus();
+    } else {
+      $(".act-one").fadeOut("slow", function() {
+        $(".act-two").fadeIn("slow");
+      });
+    }
   })
 
+
+  // ————————————————————————————
+
+
+  /**
+   * 第二幕：结局
+   */
+  $("#act-two-continue").click(function() {
+    $(".act-two").fadeOut("slow", function() {
+      $(".curtain-call").fadeIn("slow");
+    })
+  })
 })

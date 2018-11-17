@@ -1,8 +1,5 @@
 /* 共有样式 */
 .continue {
-  color: #57C3B9;
-}
-.continue:hover {
   background: #57C3B9;
   color: #fff;
   padding: 10px;
@@ -51,24 +48,23 @@
 
 /* 第一幕：报名 */
 .act-one {
-  /* display: none; */
+  display: none;
   width: 1000px;
   height: 718px;
   background: url("../img/game_frame.png") no-repeat top center;
 }
 .act-one-text {
   display: none;
-  padding-top: 250px;
+  padding-top: 220px;
 }
 .act-one-text p {
   text-align: center;
   line-height: 40px;
 }
 .act-one-form {
-  /* display: none; */
-  padding: 180px 200px 0;
+  display: none;
+  padding: 180px 180px 0;
 }
-
 .form-title {
   text-align: center;
   margin-bottom: 30px;
@@ -84,4 +80,32 @@
 .form-submit {
   text-align: center;
   margin-top: 30px;
+}
+
+/* 第二幕：结局 */
+.act-two {
+  display: none;
+  width: 1000px;
+  height: 718px;
+  background: url("../img/act_two.png") no-repeat top center;
+  position: relative;
+}
+.act-two-continue {
+  position: absolute;
+  width: 220px;
+  height: 130px;
+  right: 90px;
+  top: 335px;
+}
+
+.curtain-call {
+  /* display: none; */
+  width: 1000px;
+  height: 718px;
+  background: url("../img/game_frame.png") no-repeat top center;
+  position: relative;
+  padding: 100px 0px 0px 50px;
+}
+.curtain-call p{
+  line-height: 40px;
 }
