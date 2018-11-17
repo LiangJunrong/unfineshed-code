@@ -9,12 +9,18 @@ $(function() {
 
   // 点击开始游戏
   $(".start-game").click(function() {
-    $(".game-start").hide();
-    $(".act-one").show();
+    $(".game-start").fadeOut("slow", function() {
+      $(".prelude").fadeIn("slow");
+    });
+    
   })
 
   /**
    * 第一幕
    */
-  
+  $("#prelude-continue").click(function() {
+    $(".prelude").fadeOut("slow", function() {
+      $(".act-one").fadeIn("slow");
+    })
+  })
 })

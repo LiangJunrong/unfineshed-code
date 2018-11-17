@@ -10,7 +10,7 @@
   display: none;
   width: 1000px;
   height: 718px;
-  background: url("../img/game-start.png") no-repeat top center;
+  background: url("../img/game_start.png") no-repeat top center;
   position: relative;
 }
 .start-game {
@@ -26,10 +26,28 @@
   display: none;
 }
 
-/* 第一幕 - ActOne.html */
+/* 序幕 */
+.prelude {
+  display: none;
+  width: 1000px;
+  height: 718px;
+  background: url("../img/game_frame.png") no-repeat top center;
+  padding-top: 250px;
+}
+.prelude p {
+  text-align: center;
+  line-height: 40px;
+}
+.prelude-continue {
+  line-height: 30px;
+  color: #57C3B9;
+  font-size: 0.9em;
+}
+
+/* 第一幕：报名 */
 .act-one {
   /* display: none; */
   width: 1000px;
   height: 718px;
-  background: url("../img/game-frame.png") no-repeat top center;
+  background: url("../img/game_frame.png") no-repeat top center;
 }
