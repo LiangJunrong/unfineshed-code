@@ -57,8 +57,8 @@
           <div class="form-group row">
             <label for="user-name" class="col-sm-4 col-form-label">姓&emsp;&emsp;名</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control user-name" id="user-name" placeholder="请输入你的大名" required>
-              <small class="form-text user-name-valid-feedback">你的大名必须是中文名哦~</small>
+              <input type="text" class="form-control user-name" id="user-name" placeholder="请输入你的大名" maxlength="9" required>
+              <small class="form-text user-name-valid-feedback">必须是 2-9 位中文名哦~</small>
             </div>
           </div>
           
@@ -66,52 +66,56 @@
           <div class="form-group row">
             <label for="user-password" class="col-sm-4 col-form-label">密&emsp;&emsp;码</label>
             <div class="col-sm-8">
-              <input type="password" class="form-control user-password" id="user-password" placeholder="请输入密码" required>
-              <small class="form-text user-password-valid-feedback">密码只能是字母、数字、下划线(_)和连接符(-)组合的 6-18 位喔~</small>
+              <input type="password" class="form-control user-password" id="user-password" placeholder="请输入你的密码" maxlength="18" required>
+              <small class="form-text user-password-valid-feedback">只能是字母、数字、下划线(_)和连接符(-)组合的 6-18 位数喔~</small>
             </div>
           </div>
 
-          <!-- 个人简介 -->
+          <!-- 战斗宣言 -->
           <div class="form-group row">
-              <label for="user-personal-profile" class="col-sm-4 col-form-label">个人简介</label>
+              <label for="user-personal-profile" class="col-sm-4 col-form-label">战斗宣言</label>
               <div class="col-sm-8">
-                <textarea class="form-control" id="user-personal-profile"></textarea>
-                <small class="form-text text-muted">请输入你的简介喔~</small>
+                <textarea class="form-control" id="user-personal-profile" maxlength="18" required></textarea>
+                <small class="form-text user-personal-profile-valid-feedback">请输入中文或者英文宣言~</small>
               </div>
           </div>
-          
+
         </div>
 
         <!-- 表单右侧 -->
         <div class="col-md-6">
+          
           <!-- 电话号码 -->
           <div class="form-group row">
               <label for="user-phone" class="col-sm-4 col-form-label">电话号码</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="user-phone" placeholder="请输入电话号码">
-                <small class="form-text text-muted">请正确输入你的电话号码喔~</small>
+                <input type="text" class="form-control user-phone" id="user-phone" placeholder="请输入电话号码" maxlength="11" required>
+                <small class="form-text user-phone-valid-feedback">请正确输入手机号码~</small>
               </div>
           </div>
+
           <!-- 身份证号 -->
           <div class="form-group row">
               <label for="user-id-number" class="col-sm-4 col-form-label">身份证号</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="user-id-number" placeholder="请输入你的身份证号">
-                <small class="form-text text-muted">请正确输入你的身份证号~</small>
+                <input type="text" class="form-control user-id-number" id="user-id-number" placeholder="请输入身份证号">
+                <small class="form-text user-id-number-valid-feedback">请正确输入身份证号~</small>
               </div>
           </div>
-          <!-- 报名费 -->
+
+          <!-- 电子邮箱 -->
           <div class="form-group row">
-              <label for="user-registration-fee" class="col-sm-4 col-form-label">报名费用</label>
+              <label for="user-mailbox" class="col-sm-4 col-form-label">电子邮箱</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="user-registration-fee" placeholder="请输入你的报名费">
-                <small class="form-text text-muted">请正确输入你的报名费用~</small>
+                <input type="text" class="form-control user-mailbox" id="user-mailbox" placeholder="请输入你的邮箱">
+                <small class="form-text user-mailbox-valid-feedback">请正确输入电子邮箱~</small>
               </div>
           </div>
+
         </div>
         <!-- 确认报名 -->
         <div class="form-submit col-md-12">
-          <button class="btn btn-primary" type="submit">确认报名</button>
+          <button class="btn btn-primary form-submit-button" id="form-submit-button" type="submit">确认报名</button>
         </div>
       </div>
     </div>

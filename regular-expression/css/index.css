@@ -66,17 +66,19 @@
 }
 .act-one-form {
   /* display: none; */
-  padding: 200px 200px 0;
+  padding: 180px 200px 0;
 }
 
 .form-title {
   text-align: center;
   margin-bottom: 30px;
 }
-.user-name-valid-feedback {
-  display: none;
-}
-.user-password-valid-feedback {
+.user-name-valid-feedback,
+.user-password-valid-feedback,
+.user-personal-profile-valid-feedback,
+.user-phone-valid-feedback,
+.user-id-number-valid-feedback,
+.user-mailbox-valid-feedback {
   display: none;
 }
 .form-submit {
