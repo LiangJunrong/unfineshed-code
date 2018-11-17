@@ -25,12 +25,95 @@
       <p>有人，建议来个比赛</p>
       <p>谁赢，谁能得到第一</p>
       <p>这，就是天下第一武道会……</p>
-      <p class="prelude-continue" id="prelude-continue">点我继续 >>></p>
+      <p>
+        <span class="prelude-continue continue" id="prelude-continue">点我继续 >>></span>
+      </p>
     </div>
 
     <!-- 第一章：报名 -->
     <div class="act-one">
-      
+      <!-- 第一章：报名背景 -->
+      <div class="act-one-text">
+        <p>说来也是神奇</p>
+        <p>这一届的天下第一武道会</p>
+        <p>在上一届盟主的力排众议下</p>
+        <p>采用一种<b>“很高级”</b>的报名法</p>
+        <p>每个人在心中默念“天下第一”</p>
+        <p>就会出现报名单……</p>
+        <p>
+          <span class="act-one-text-continue continue" id="act-one-text-continue">心中默念“天下第一” >>></span>
+        </p>
+      </div>
+      <!-- 第一章：报名表单 -->
+      <div class="act-one-form row">
+        
+        <!-- 确认报名 -->
+        <div class="form-title col-md-12">天下第一武道会报名表</div>
+        
+        <!-- 表单左侧 -->
+        <div class="col-md-6">
+          
+          <!-- 姓名 -->
+          <div class="form-group row">
+            <label for="user-name" class="col-sm-4 col-form-label">姓&emsp;&emsp;名</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control user-name" id="user-name" placeholder="请输入你的大名" required>
+              <small class="form-text user-name-valid-feedback">你的大名必须是中文名哦~</small>
+            </div>
+          </div>
+          
+          <!-- 密码 -->
+          <div class="form-group row">
+            <label for="user-password" class="col-sm-4 col-form-label">密&emsp;&emsp;码</label>
+            <div class="col-sm-8">
+              <input type="password" class="form-control user-password" id="user-password" placeholder="请输入密码" required>
+              <small class="form-text user-password-valid-feedback">密码只能是字母、数字、下划线(_)和连接符(-)组合的 6-18 位喔~</small>
+            </div>
+          </div>
+
+          <!-- 个人简介 -->
+          <div class="form-group row">
+              <label for="user-personal-profile" class="col-sm-4 col-form-label">个人简介</label>
+              <div class="col-sm-8">
+                <textarea class="form-control" id="user-personal-profile"></textarea>
+                <small class="form-text text-muted">请输入你的简介喔~</small>
+              </div>
+          </div>
+          
+        </div>
+
+        <!-- 表单右侧 -->
+        <div class="col-md-6">
+          <!-- 电话号码 -->
+          <div class="form-group row">
+              <label for="user-phone" class="col-sm-4 col-form-label">电话号码</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="user-phone" placeholder="请输入电话号码">
+                <small class="form-text text-muted">请正确输入你的电话号码喔~</small>
+              </div>
+          </div>
+          <!-- 身份证号 -->
+          <div class="form-group row">
+              <label for="user-id-number" class="col-sm-4 col-form-label">身份证号</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="user-id-number" placeholder="请输入你的身份证号">
+                <small class="form-text text-muted">请正确输入你的身份证号~</small>
+              </div>
+          </div>
+          <!-- 报名费 -->
+          <div class="form-group row">
+              <label for="user-registration-fee" class="col-sm-4 col-form-label">报名费用</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="user-registration-fee" placeholder="请输入你的报名费">
+                <small class="form-text text-muted">请正确输入你的报名费用~</small>
+              </div>
+          </div>
+        </div>
+        <!-- 确认报名 -->
+        <div class="form-submit col-md-12">
+          <button class="btn btn-primary" type="submit">确认报名</button>
+        </div>
+      </div>
     </div>
 
   </div>

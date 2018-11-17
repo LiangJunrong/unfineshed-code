@@ -1,4 +1,14 @@
 /* 共有样式 */
+.continue {
+  color: #57C3B9;
+}
+.continue:hover {
+  background: #57C3B9;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
 .game {
   /* none */
   width: 1000px;
@@ -38,11 +48,6 @@
   text-align: center;
   line-height: 40px;
 }
-.prelude-continue {
-  line-height: 30px;
-  color: #57C3B9;
-  font-size: 0.9em;
-}
 
 /* 第一幕：报名 */
 .act-one {
@@ -50,4 +55,31 @@
   width: 1000px;
   height: 718px;
   background: url("../img/game_frame.png") no-repeat top center;
+}
+.act-one-text {
+  display: none;
+  padding-top: 250px;
+}
+.act-one-text p {
+  text-align: center;
+  line-height: 40px;
+}
+.act-one-form {
+  /* display: none; */
+  padding: 200px 200px 0;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.user-name-valid-feedback {
+  display: none;
+}
+.user-password-valid-feedback {
+  display: none;
+}
+.form-submit {
+  text-align: center;
+  margin-top: 30px;
 }
