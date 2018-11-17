@@ -1,18 +1,16 @@
 /* 共有样式 */
 .game {
-  width: 100%;
-  height: 100%;
-  background: #ccc;
+  /* none */
+  width: 1000px;
+  margin: 0 auto;
 }
 
 /* 开场 - index.html */
 .game-start {
-  /* display: none; */
-  width: 1000px;;
-  height: 620px;
-  box-sizing: border-box;
-  margin: 20px auto;
-  background: url("../img/background.png") no-repeat top center;
+  display: none;
+  width: 1000px;
+  height: 718px;
+  background: url("../img/game-start.png") no-repeat top center;
   position: relative;
 }
 .start-game {
@@ -21,10 +19,8 @@
   height: 50px;
   border-radius: 15px;
   position: absolute;
-  top: 425px;
-  left: 385px;
-  background: red;
-  opacity: .3;
+  top: 466px;
+  left: 389px;
 }
 .audio {
   display: none;
@@ -32,5 +28,8 @@
 
 /* 第一幕 - ActOne.html */
 .act-one {
-  display: none;
+  /* display: none; */
+  width: 1000px;
+  height: 718px;
+  background: url("../img/game-frame.png") no-repeat top center;
 }
