@@ -14,7 +14,7 @@
 
 /* 开场 - index.html */
 .game-start {
-  display: none;
+  /* display: none; */
   width: 1000px;
   height: 718px;
   background: url("../img/game_start.png") no-repeat top center;
@@ -28,9 +28,6 @@
   position: absolute;
   top: 466px;
   left: 389px;
-}
-.audio {
-  display: none;
 }
 
 /* 序幕 */
@@ -96,16 +93,22 @@
   height: 130px;
   right: 90px;
   top: 335px;
+  cursor: pointer;
 }
 
+/* 谢幕 */
 .curtain-call {
-  /* display: none; */
+  display: none;
   width: 1000px;
   height: 718px;
-  background: url("../img/game_frame.png") no-repeat top center;
+  background: url("../img/curtain_call.png") no-repeat top center;
   position: relative;
-  padding: 100px 0px 0px 50px;
+  padding: 150px 0px 0px 50px;
+  color: #fff;
 }
-.curtain-call p{
+.curtain-call-image {
+  margin: 100px auto;
+}
+.curtain-call-text p{
   line-height: 40px;
 }

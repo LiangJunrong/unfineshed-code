@@ -3,10 +3,7 @@ $(function() {
   /**
    * 开始界面
    */
-  // 自动播放音乐
-  // setTimeout(function() {
-  //   $("#audio")[0].play();
-  // }, 50);
+  // 点击开始
   $(".start-game").click(function() {
     $(".game-start").fadeOut("slow", function() {
       $(".prelude").fadeIn("slow");
@@ -91,7 +88,7 @@ $(function() {
   // 验证战斗宣言
   $("#user-personal-profile").blur(function() {
     // 允许 中文、a-z、A-Z、英文逗号(,)、中文逗号(，)、空格，位数：6-18
-    var userPersonalProfileReg = /^[\u4e00-\u9fa5a-zA-Z,，\s*]{6,18}$/;
+    var userPersonalProfileReg = /^[\u4e00-\u9fa5a-zA-Z,，\s*]{3,18}$/;
     var userPersonalProfile = $("#user-personal-profile").val();
     if(userPersonalProfileReg.test(userPersonalProfile)) {
       $(".user-personal-profile").removeClass("is-invalid");
@@ -264,4 +261,5 @@ $(function() {
       $(".curtain-call").fadeIn("slow");
     })
   })
+
 })
