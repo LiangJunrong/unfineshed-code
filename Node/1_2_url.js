@@ -6,6 +6,10 @@ var http = require("http");
  * req 获取 url 信息 (request)
  * res 浏览器返回响应信息 (response)
  */
+
+// 3. 引入 url 模块
+var url = require("url");
+
 http.createServer(function (req, res) {
 
   if(req.url != "/favicon.ico") {
@@ -41,8 +45,7 @@ http.createServer(function (req, res) {
 }).listen(3000);
 
 
-// 3. 引入 url 模块
-var url = require("url");
+
 
 // console.log(url);
 /**
