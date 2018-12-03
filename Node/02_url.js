@@ -1,33 +1,52 @@
-// 1. 引入 http 模块
+// 1. 引入 url 模块
+var url = require("url");
+
+// 2. 引入 http 模块
 var http = require("http");
 
-// 2. 用 http 模块创建服务
+// 3. 用 http 模块创建服务
 /**
  * req 获取 url 信息 (request)
  * res 浏览器返回响应信息 (response)
  */
-
-// 3. 引入 url 模块
-var url = require("url");
-
 http.createServer(function (req, res) {
 
+  // 4. 获取服务器请求
+  /**
+   * 访问地址是：http://localhost:3000/?userName=jsliang&userAge=23
+   * 如果你执行 console.log(req.url)，它将执行两次，分别返回下面的信息：
+   * /  ?userName=jsliang&userAge=23
+   * /  /favicon.ico
+   * 这里为了防止重复执行，所以排除 req.url == /favicon.ico 的情况
+   */
   if(req.url != "/favicon.ico") {
-    // 地址是：http://localhost:3000/?userName=jsliang&userAge=23
-    console.log(req.url);
-    /**
-     * / 表示根路径，本地启动即是 http://127.0.0.1:3000，如果输入了其他的：/?userName=jsliang&userAge=23
-     * /favicon.ico 表示标签页小图标
-     */
-    // /
-    // /favicon.ico
     
+    // 5. 使用 url 的 parse 方法
     /**
+     * parse 方法需要两个参数：
      * 第一个参数是地址
      * 第二个参数是 true 的话表示把 get 传值转换成对象
      */ 
     var result = url.parse(req.url, true);
+    console.log(result);
+    /**
+     * Url {
+     *   protocol: null,
+     *   slashes: null,
+     *   auth: null,
+     *   host: null,
+     *   port: null,
+     *   hostname: null,
+     *   hash: null,
+     *   search: '?userName=jsliang&userAge=23',
+     *   query: { userName: 'jsliang', userAge: '23' },
+     *   pathname: '/',
+     *   path: '/?userName=jsliang&userAge=23',
+     *   href: '/?userName=jsliang&userAge=23' }
+     */
+
     console.log(result.query.userName); // jsliang
+
     console.log(result.query.userAge); // 23
   }
 
@@ -45,10 +64,11 @@ http.createServer(function (req, res) {
 }).listen(3000);
 
 
-
-
+// 1. url 有哪些内容？
 // console.log(url);
+
 /**
+ * Console：
  { 
    Url: [Function: Url],
     parse: [Function: urlParse], // 获取地址信息
@@ -62,8 +82,12 @@ http.createServer(function (req, res) {
   }
  */
 
+
+// 2. parse 怎么用
 // console.log(url.parse("http://www.baidu.com"));
+
 /**
+ * Console：
   Url {
     protocol: 'http:',
     slashes: true,
@@ -80,8 +104,12 @@ http.createServer(function (req, res) {
   }
  */
 
+
+// 3. parse 带参数
 // console.log(url.parse("http://www.baidu.com/new?name=zhangsan"));
+
 /**
+ * Console：
   Url {
     protocol: 'http:',
     slashes: true,
@@ -98,6 +126,8 @@ http.createServer(function (req, res) {
   }
  */
 
+
+//  4. fromat 怎么用？
 // console.log(url.format({
 //   protocol: 'http:',
 //   slashes: true,
@@ -112,7 +142,13 @@ http.createServer(function (req, res) {
 //   path: '/new?name=zhangsan',
 //   href: 'http://www.baidu.com/new?name=zhangsan' 
 // }))
+
+// Console：
 // http://www.baidu.com/new?name=zhangsan
 
+
+// 5. resolve 怎么用？
 // console.log(url.resolve("http://www.baidu.com/jsliang", "梁峻荣"));
+
+// Console：
 // http://www.baidu.com/梁峻荣
