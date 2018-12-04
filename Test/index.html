@@ -13,13 +13,15 @@
 
   <script>
     window.onload = function() {
-      var str = "abc123def456hash789";
-      function findNum(str) {
-        let sum = str.match(/\d+/g)
-        return sum;
-      }
-      console.log(findNum(str));
-    }
+      var filterLabel = document.getElementById("filter-label");
+      var aT = filterLabel.getElementsByTagName("textarea");
+      var oInput = document.getElementById("input2");
+      // var re = /<\w+/g;
+      var re = /<[^>]+>/g;
+      oInput.onclick = function() {
+        aT[1].value = aT[0].value.replace(re, "");
+      };
+    };
   </script>
 </body>
 
