@@ -4,13 +4,16 @@ let http = require("http");
 // 引入 fs 模块
 let fs = require("fs");
 
+// 引入 url 模块
+let url = require("url");
+
 // 引入 path 模块
 let path = require("path");
 
 http.createServer((req, res) => {
   
   // 获取响应路径
-  let pathName = req.url;
+  let pathName = url.parse(req.url).pathname;
 
   // 默认加载路径
   if (pathName == "/") {
@@ -48,9 +51,12 @@ http.createServer((req, res) => {
       }
       // 返回这个文件
       else {
+        // 获取文件类型
+        let ext = getExt(extName);
+
         // 设置请求头
         res.writeHead(200, {
-          "Content-Type": "text/html; charset='utf-8'"
+          "Content-Type": ext + "; charset='utf-8'"
         });
         // 读取写入文件
         res.write(data);
