@@ -19,11 +19,28 @@ http.createServer((req, res) => {
     // 获取 08_WebService 下的 index.html
     fs.readFile("./08_WebService/" + pathName, (err, data) => {
       if (err) {
+        
         // 如果不存在这个文件
+        
         console.log("404 Not Found!");
+        fs.readFile('./08_WebService/404.html', (errorNotFound, dataNotFound) => {
+          if(errorNotFound) {
+            console.log(errorNotFound);
+          } else {
+            res.writeHead(200, {
+              "Content-Type": "text/html; charset='utf-8'"
+            });
+            // 读取写入文件
+            res.write(dataNotFound);
+            // 结束响应
+            res.end();
+          }
+        })
         return;
       } else {
+
         // 返回这个文件
+        
         // 设置请求头
         res.writeHead(200, {
           "Content-Type": "text/html; charset='utf-8'"
