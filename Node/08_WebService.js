@@ -53,6 +53,7 @@ http.createServer((req, res) => {
       else {
         // 获取文件类型
         let ext = getExt(extName);
+        console.log(ext);
 
         // 设置请求头
         res.writeHead(200, {
@@ -69,10 +70,8 @@ http.createServer((req, res) => {
 
 // 获取后缀名
 getExt = (extName) => {
-  switch(extName) {
-    case '.html': return 'text/html';
-    case '.css': return 'text/css';
-    case '.js': return 'text/js';
-    default: return 'text/html';
-  }
+  // readFile 是异步操作，所以需要使用 readFileSync
+  let data = fs.readFileSync('./08_ext.json');
+  let ext = JSON.parse(data.toString());
+  return ext[extName];
 }
