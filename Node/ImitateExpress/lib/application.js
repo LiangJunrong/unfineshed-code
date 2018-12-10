@@ -19,7 +19,7 @@ const Application = () => {
 }
 
 // 在 Application 的原型上扩展 get 方法，以便 Application 的实例具有该方法
-Application.prototype.get = (path,handle) => {
+Application.prototype.get = (path, handle) => {
   // 将请求路由押入栈内
   this.stack.push({
     path,
