@@ -1,10 +1,11 @@
-const express = require('express');
+const express = require('jsliang-node');
+
 const app = express();
 
-app.get('/', (res, req) => {
-  res.send("Hello World!");
-})
+app.get('/', (req, res) => {
+  res.send('Hello jsliang Node!');
+});
 
 app.listen(3000, () => {
-  console.log("Example app listening on port 3000");
-})
+  console.log('正在监听 3000 端口');
+});
