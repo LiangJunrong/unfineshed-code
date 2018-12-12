@@ -1,5 +1,7 @@
 const express = require('jsliang-node');
-
+console.log(express);
+console.log(express());
+console.log(express().get);
 const app = express();
 
 app.get('/', (req, res) => {
