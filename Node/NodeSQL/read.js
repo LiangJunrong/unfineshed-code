@@ -8,7 +8,9 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-connection.query('SELECT * FROM user', function (err, res) {
+let readSql = "SELECT * FROM user";
+
+connection.query(readSql, function (err, res) {
   if (err) throw err;
   console.log(res);
 });
