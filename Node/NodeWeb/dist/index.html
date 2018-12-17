@@ -5,51 +5,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Node API</title>
+  <title>Node Web</title>
 
 </head>
 
 <body>
-  <!-- 挂载地点 -->
+
   <div id="app">
     <h1>Todo List</h1>
     <ul>
       <li v-for="(item, index) in items" :key="index">{{ item }}</li>
     </ul>
     <input type="text" v-model="item">
-    <button @click="postApi">button</button>
+    <button @click="postApi">添加</button>
   </div>
 
-  <!-- cdn 引用 -->
+  <!-- cdn 引用：Vue 和 Node -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  
   <script>
     new Vue({
-      // 挂载到 id 为 app 的节点上
       el: document.getElementById('app'),
-      data: function () { // 数据挂载
+      data: function () {
         return {
-          items: ["张三", "李四"],
+          items: [],
           item: '',
         }
       },
       created() {
-        axios.get('http://localhost:3000/').then(response => {
-          console.log(response);
-          this.items = response.data
-        }).catch(function (error) {
-          console.log(error)
+        // 进入页面请求数据
+        axios.get('http://localhost:3000/').then(res => {
+          console.log("\n【API - get 数据】");
+          console.log(res);
+          this.items = res.data;
+        }).catch(function (err) {
+          console.log(err)
         })
       },
       methods: {
+        // 点击按钮提交数据
         postApi() {
           axios.post('http://localhost:3000/', {
             item: this.item
-          }).then(response => {
-            console.log(response);
-            this.items = response.data
-          }).catch(function (error) {
-            console.log(error)
+          }).then(res => {
+            console.log("\n【API - post 数据】")
+            console.log(res);
+            this.items = res.data;
+          }).catch(function (err) {
+            console.log(err)
           })
         }
       }
