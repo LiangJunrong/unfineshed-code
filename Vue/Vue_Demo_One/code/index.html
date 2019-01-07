@@ -13,84 +13,56 @@
 </head>
 <body>
   <!-- html 区 -->
-  <div class="main-container">
+  <div class="main-container" id="app">
+    <!-- 头部标题 -->
     <div class="header">
       <h3>功成千骨</h3>
     </div>
+    <!-- 内容区 -->
     <div class="content">
       <!-- 输入区 -->
       <div class="content-input-todo">
-        <input type="text" placeholder="第 n 个敌人">
-        <button>进击</button>
+        <input type="text" placeholder="第 n 个敌人" v-model="todo">
+        <button @click="addTodoItem">进击</button>
       </div>
       <!-- 列表区 -->
       <div class="content-list">
         <!-- 待完成 -->
         <div class="content-list-todo">
-          <p>千军万马取敌首</p>
+          <h4>千军万马取敌首</h4>
           <ul>
-            <li>
-              <input type="checkbox">
-              <span>敌军 1</span>
-              <span>×</span>
-            </li>
-            <li>
-              <input type="checkbox">
-              <span>敌军 2</span>
-              <span>×</span>
-            </li>
-            <li>
-              <input type="checkbox">
-              <span>敌军 3</span>
+            <li v-for="todoItem in todoInfos" :key="todoItem.id" v-if="todoItem.state == 0">
+              <input type="checkbox" v-model="todoItem.isChecked">
+              <span v-text="todoItem.todoTitle"></span>
               <span>×</span>
             </li>
           </ul>
         </div>
         <!-- 已完成 -->
         <div class="content-list-finish">
-          <p>敌羞吾去脱他衣</p>
+          <h4>敌羞吾去脱他衣</h4>
           <ul>
-            <li>
-              <input type="checkbox">
-              <span>亡军 1</span>
-              <span>×</span>
-            </li>
-            <li>
-              <input type="checkbox">
-              <span>亡军 2</span>
-              <span>×</span>
-            </li>
-            <li>
-              <input type="checkbox">
-              <span>亡军 3</span>
+            <li v-for="finishItem in todoInfos" :key="finishItem.id" v-if="finishItem.state == 1">
+              <input type="checkbox" v-model="finishItem.isChecked">
+              <span v-text="finishItem.todoTitle"></span>
               <span>×</span>
             </li>
           </ul>
         </div>
         <!-- 回收站 -->
         <div class="content-list-recycle">
-          <p>溃不成军鸟兽散</p>
+          <h4>溃不成军鸟兽散</h4>
           <ul>
-            <li>
-              <input type="checkbox">
-              <span>逃军 1</span>
-              <span>×</span>
-            </li>
-            <li>
-              <input type="checkbox">
-              <span>逃军 2</span>
-              <span>×</span>
-            </li>
-            <li>
-              <input type="checkbox">
-              <span>逃军 3</span>
+            <li v-for="recycleItem in todoInfos" :key="recycleItem.id" v-if="recycleItem.state == 2">
+              <input type="checkbox" v-model="recycleItem.isChecked">
+              <span v-text="recycleItem.todoTitle"></span>
               <span>×</span>
             </li>
           </ul>
         </div>
       </div>
-      <!--  -->
     </div>
+    <!-- 底部信息 -->
     <div class="footer">
       <p>不折腾的前端</p>
       <p>和咸鱼有什么区别</p>
@@ -99,6 +71,7 @@
   </div>
 
   <!-- js 区 -->
+  <script src="https://cdn.bootcss.com/vue/2.5.21/vue.js"></script>
   <script src="./js/index.js"></script>
 
 </body>
