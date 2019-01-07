@@ -1,9 +1,63 @@
-/* 未完待续 */
+/* 共用 */
+html, body {
+  height: 100%;
+}
+body {
+  background: url("../img/background.jpg") no-repeat center;
+  background-size: 100% 100%;
+}
+
+/* 页面主体 */
+.main-container {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* 头部标题 */
+.header {
+  width: 100%;
+  height: 150px;
+  background: url("../img/title.png") no-repeat center;
+}
+
+/* 内容区 */
+.content {
+  text-align: center;
+}
+
 .content-list {
   display: flex;
+  margin-top: 30px;
 }
 .content-list div {
+  width: 100%;
   margin-right: 20px;
   border: 1px solid #ccc;
   padding: 30px;
+  border: 15px solid transparent;
+  border-image: url("../img/border.png") 60 60 stretch;
+}
+.content-list div ul {
+  text-align: left;
+}
+.content-list div ul li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 底部区 */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.footer a {
+  color: deepskyblue;
+}
+.footer a:hover {
+  color: deepskyblue;
 }
