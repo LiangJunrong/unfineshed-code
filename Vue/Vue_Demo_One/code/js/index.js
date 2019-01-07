@@ -24,6 +24,27 @@ var app = new Vue({
       })
       // id 自增
       this.id++;
+    },
+    // // map + spclice 写法
+    // deleteInfo(recycleItem) {
+    //   this.todoInfos.map((item, index) => {
+    //     if(item.id == recycleItem.id) {
+    //       this.todoInfos.splice(index, 1);
+    //     }
+    //   })
+    // },
+    // // splice + findIndex 写法
+    // deleteInfo(recycleItem) {
+    //   this.todoInfos.splice( this.todoInfos.findIndex( v => v.id === recycleItem.id), 1);
+    //   console.log(this.todoInfos);
+    // },
+    // filter 写法
+    deleteInfo(recycleItem) {
+      this.todoInfos.filter(function(x) {
+        console.log(x.id == recycleItem.id);
+        return x.id != recycleItem.id;
+      })
+      console.log(this.todoInfos);
     }
   }
 })
