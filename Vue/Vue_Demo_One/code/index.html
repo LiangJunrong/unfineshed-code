@@ -48,7 +48,7 @@
           <ul>
             <li v-for="finishItem in todoInfos" :key="finishItem.id" v-if="finishItem.state == 1">
               <input type="checkbox" v-model="finishItem.isChecked" @change="finishItem.state = 0">
-              <span clsss="todo-title" v-if="!finishItem.isEdit" v-text="finishItem.todoTitle" @click="finishItem.isEdit = true"></span>
+              <span class="todo-title" v-if="!finishItem.isEdit" v-text="finishItem.todoTitle" @click="finishItem.isEdit = true"></span>
               <input v-if="finishItem.isEdit" @blur="finishItem.isEdit = false"  @keyup.enter="finishItem.isEdit = false" v-model="finishItem.todoTitle" type="text">
               <span  class="icon-recycle" @click="finishItem.state = 2"></span>
             </li>
@@ -61,7 +61,7 @@
           <ul>
             <li v-for="recycleItem in todoInfos" :key="recycleItem.id" v-if="recycleItem.state == 2">
               <span class="content-list-recycle-back" @click="recycleItem.state = 0; recycleItem.isChecked = false"></span>
-              <span clsss="todo-title" v-if="!recycleItem.isEdit" v-text="recycleItem.todoTitle" @click="recycleItem.isEdit = true"></span>
+              <span class="todo-title" v-if="!recycleItem.isEdit" v-text="recycleItem.todoTitle" @click="recycleItem.isEdit = true"></span>
               <input v-if="recycleItem.isEdit" type="text" @blur="recycleItem.isEdit = false" @keyup.enter="recycleItem.isEdit = false" v-model="recycleItem.todoTitle">
               <span  class="icon-delete" @click="deleteInfo(recycleItem)"></span>
             </li>
