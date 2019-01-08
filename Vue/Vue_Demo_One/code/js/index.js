@@ -2,7 +2,7 @@ var app = new Vue({
   el: "#app",
   data: {
     id: 1, // 自增，确保能快速找到数据
-    todo: '', // 双向绑定输入框
+    todo: "", // 双向绑定输入框
     todoInfos: [
       // 已不需要，注释掉
       // {
@@ -26,6 +26,8 @@ var app = new Vue({
       })
       // id 自增
       this.id++;
+      // 清空输入框
+      this.todo = "";
     },
     /**
      * 这里使用了三种写法

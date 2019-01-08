@@ -54,6 +54,6 @@ div, input { box-sizing: border-box; }
 }
 
 /** 设置input的placeholder - set input placeholder **/
-input::-webkit-input-placeholder { color: #919191; font-size: .26rem } /* Webkit browsers */
-input::-moz-placeholder { color: #919191; font-size: .26rem } /* Mozilla Firefox */
-input::-ms-input-placeholder { color: #919191; font-size: .26rem } /* Internet Explorer */
+input::-webkit-input-placeholder { color: #919191; font-size: 16px } /* Webkit browsers */
+input::-moz-placeholder { color: #919191; font-size: 16px } /* Mozilla Firefox */
+input::-ms-input-placeholder { color: #919191; font-size: 16px } /* Internet Explorer */
