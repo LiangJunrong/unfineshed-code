@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
-
-/**
- * import { Component } from 'react';
- * 
- * 等价于
- * 
- * import React from 'react'
- * const Component = React.Component
- */
+import logo from './logo.svg';
+import './App.css';
 
 class App extends Component {
-  // JSX
   render() {
     return (
-      <h3>Hello React!</h3>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
     );
   }
 }
