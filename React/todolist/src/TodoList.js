@@ -2,21 +2,75 @@
 import React, { Component, Fragment } from 'react';
 
 class TodoList extends Component {
+
+  // 构造函数
+  constructor(props) {
+    super(props);
+    // 定义数据
+    this.state = {
+      inputValue: '',
+      list: []
+    }
+  }
+
+  // 渲染页面
   render() {
+    let closeStyle = {
+      fontSize: '1.2em',
+      color: 'deepskyblue'
+    }
     return (
       <Fragment>
         <div>
-          <input type="text" />
-          <button>提交</button>
+          {/* 单项数据绑定 */}
+          {/* 在 React 中，绑定时间的，一般为半驼峰形式 */}
+          <input 
+            type="text" 
+            value={this.state.inputValue}
+            onChange={this.handleInputChange.bind(this)}
+          />
+          <button onClick={this.handleBtnClick.bind(this)}>提交</button>
         </div>
         <ul>
-          <li>吃饭</li>
-          <li>睡觉</li>
-          <li>打豆豆</li>
+          {
+            this.state.list.map( (item, index) => {
+              return <li key={index}>
+                <span>{index} - {item}</span>
+                <span style={closeStyle} onClick={this.handleItemDelete.bind(this, index)}>×</span>
+              </li>
+            })
+          }
         </ul>
       </Fragment>
     )
   }
+
+  // 方法体 - 输入内容
+  handleInputChange(e) {
+    this.setState({
+      inputValue: e.target.value
+    })
+  }
+
+  // 方法体 - 点击提交
+  handleBtnClick() {
+    this.setState({
+      list: [...this.state.list, this.state.inputValue],
+      inputValue: ''
+    })
+  }
+
+  // 方法体 - 删除项目
+  handleItemDelete(index) {
+    // immutable - state 不允许做任何改变
+    const list = [...this.state.list];
+    list.splice(index, 1);
+
+    this.setState({
+      list: list
+    })
+  }
+
 }
 
 export default TodoList;
